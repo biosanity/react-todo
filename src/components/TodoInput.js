@@ -14,17 +14,17 @@ const TodoInput = ({ createTodoItem }) => {
     <div className="todo-input">
       <form onSubmit={handleSubmit}>
         <div className="field has-addons has-addons-centered">
-          <div className="control ">
+          <div className="control">
             <input
               type="text"
               placeholder="Content"
-              className="input"
+              className="p-5 input"
               value={input}
               onChange={(event) => setInput(event.target.value)}
             />
           </div>
           <div className="control">
-            <button className="button" onClick={handleSubmit}>
+            <button className="p-5 button" onClick={handleSubmit}>
               + Add
             </button>
           </div>

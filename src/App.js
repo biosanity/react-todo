@@ -51,7 +51,7 @@ const App = () => {
   return (
     <div className="app container is-max-desktop">
       <h1 className="mb-2 is-size-2 has-text-white has-text-centered">
-        Todo App
+        To-do App
       </h1>
       <TodoInput createTodoItem={createTodoItem} />
       {todoItems.map((item, index) => (

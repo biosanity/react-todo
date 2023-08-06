@@ -12,7 +12,7 @@ const TodoItem = ({
     <div className="card m-2">
       <footer class="card-footer">
         <li
-          className="card-footer-item todo-item-content has-text-left"
+          className="p-5 card-footer-item todo-item-content has-text-left"
           onClick={() => updateTodoItemStatus(index)}
           style={{ textDecoration: item.complete ? "line-through" : "" }}
         >
@@ -20,7 +20,7 @@ const TodoItem = ({
         </li>
         <li className="card-footer-item">
           <button
-            className="button is-primary is-small"
+            className="p-4 button is-primary is-small"
             onClick={() => updateTodoItem(index)}
           >
             <FontAwesomeIcon icon={faPencil} style={{ color: "white" }} />
@@ -28,7 +28,7 @@ const TodoItem = ({
         </li>
         <li className="card-footer-item">
           <button
-            className="button is-danger is-small"
+            className="p-4 button is-danger is-small"
             onClick={() => deleteTodoItem(index)}
           >
             <FontAwesomeIcon icon={faTrash} style={{ color: "white" }} />
