@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./App.css";
+import "./App.scss";
 import TodoInput from "./components/TodoInput";
 import TodoItem from "./components/TodoItem";
 
@@ -46,8 +46,10 @@ const App = () => {
   };
 
   return (
-    <div className="app">
-      <h1 className="mb-3 is-size-3">Scott's Amazing To-Do App!</h1>
+    <div className="app container is-max-desktop">
+      <h1 className="mb-2 is-size-3 has-text-white has-text-centered">
+        Todo App
+      </h1>
       <TodoInput createTodoItem={createTodoItem} />
       {todoItems.map((item, index) => (
         <TodoItem

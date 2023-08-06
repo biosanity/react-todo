@@ -9,10 +9,10 @@ const TodoItem = ({
   updateTodoItemStatus,
 }) => {
   return (
-    <div className="card todo-list">
+    <div className="card m-2">
       <footer class="card-footer">
         <li
-          className="card-footer-item todo-item-content"
+          className="card-footer-item todo-item-content has-text-left"
           onClick={() => updateTodoItemStatus(index)}
           style={{ textDecoration: item.complete ? "line-through" : "" }}
         >

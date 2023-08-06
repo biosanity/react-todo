@@ -13,21 +13,18 @@ const TodoInput = ({ createTodoItem }) => {
   return (
     <div className="todo-input">
       <form onSubmit={handleSubmit}>
-        <div className="field has-addons">
-          <div className="control">
+        <div className="field has-addons has-addons-centered">
+          <div className="control ">
             <input
               type="text"
               placeholder="Content"
-              className="input is-rounded is-primary"
+              className="input"
               value={input}
               onChange={(event) => setInput(event.target.value)}
             />
           </div>
           <div className="control">
-            <button
-              className="button is-rounded is-primary"
-              onClick={handleSubmit}
-            >
+            <button className="button" onClick={handleSubmit}>
               + Add
             </button>
           </div>
