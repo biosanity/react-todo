@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import "./App.scss";
 import TodoInput from "./components/TodoInput";
 import TodoItem from "./components/TodoItem";
 
 const App = () => {
-  const [todoItems, setTodoItems] = React.useState([
-    { todo: "Mow the lawn", complete: false },
-    { todo: "Do Laundry", complete: false },
-    { todo: "Make Dinner", complete: false },
-  ]);
+  const storedTodoItems = localStorage.getItem("todoItems");
+  const initialTodoItems = storedTodoItems ? JSON.parse(storedTodoItems) : [];
+
+  const [todoItems, setTodoItems] = useState(initialTodoItems);
+
+  useEffect(() => {
+    localStorage.setItem("todoItems", JSON.stringify(todoItems));
+  }, [todoItems]);
 
   const createTodoItem = (todo) => {
     const newTodoItems = [...todoItems, { todo, complete: false }];
@@ -47,7 +50,7 @@ const App = () => {
 
   return (
     <div className="app container is-max-desktop">
-      <h1 className="mb-2 is-size-3 has-text-white has-text-centered">
+      <h1 className="mb-2 is-size-2 has-text-white has-text-centered">
         Todo App
       </h1>
       <TodoInput createTodoItem={createTodoItem} />

@@ -1,44 +1,49 @@
+@font-face {
+  font-family: 'poppins-regular';
+  src: url('../assets/Poppins-Regular.ttf') format('truetype');
+}
+
 * {
   margin: 0;
   padding: 0;
+  font-family: 'poppins-regular';
 }
 
 body {
   height: 100vh;
+  background: linear-gradient(to right, #4900d1, #4706c1, #450bb2, #420fa3, #3f1194);
   background-position: top center;
   background-repeat: no-repeat;
   background-size: 100% 250px;
   background-attachment: fixed;
-  background-image: linear-gradient(to right, #4900d1, #4706c1, #450bb2, #420fa3, #3f1194);
 }
 
 .app {
   padding-top: 90px;
-}
 
-.todo-input input {
-  width: 450px;
-  margin-bottom: 2rem;
-}
-
-@media only screen and (max-width: 600px) {
   .todo-input input {
-    width: 320px;
+    width: 450px;
+    margin-bottom: 2rem;
+
+    @media only screen and (max-width: 600px) {
+      width: 320px;
+    }
+  }
+
+  .todo-item-content {
+    cursor: pointer;
+    word-break: break-all;
+
+    &:hover {
+      color: hsl(171, 100%, 41%);
+    }
+  }
+
+  .card-footer-item:first-child {
+    flex-grow: 10;
+    justify-content: left;
+    padding-left: 1.2rem;
   }
 }
 
-.todo-item-content {
-  cursor: pointer;
-  word-break: break-all; 
-  
-}
 
-.todo-item-content:hover {
-  color: hsl(171, 100%, 41%);
-}
-
-.card-footer-item:first-child {
-  flex-grow: 10;
-  justify-content: left;
-  padding-left: 1.2rem;
-}

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 const TodoInput = ({ createTodoItem }) => {
-  const [input, setInput] = React.useState("");
+  const [input, setInput] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
     if (input === "") {
