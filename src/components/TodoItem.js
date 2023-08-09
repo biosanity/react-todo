@@ -1,5 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPencil, faTrash } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPencil,
+  faTrash,
+  faGripLines,
+} from "@fortawesome/free-solid-svg-icons";
 
 const TodoItem = ({
   item,
@@ -12,10 +16,15 @@ const TodoItem = ({
     <div className="card m-2">
       <footer class="card-footer">
         <li
-          className="p-5 card-footer-item todo-item-content has-text-left"
+          className="pt-5 pb-5 card-footer-item todo-item-content has-text-left"
           onClick={() => updateTodoItemStatus(index)}
           style={{ textDecoration: item.complete ? "line-through" : "" }}
         >
+          <FontAwesomeIcon
+            icon={faGripLines}
+            className="mr-3"
+            style={{ color: "gray" }}
+          />
           {item.todo}
         </li>
         <li className="card-footer-item">
