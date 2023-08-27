@@ -11,6 +11,9 @@ const App = () => {
   const initialTodoItems = storedTodoItems ? JSON.parse(storedTodoItems) : [];
 
   const [todoItems, setTodoItems] = useState(initialTodoItems);
+  const remainingTodoItems = todoItems.reduce((count, item) => {
+    return !item.complete ? count + 1 : count;
+  }, 0);
 
   const handleDragDrop = (results) => {
     const { source, destination, type } = results;
@@ -73,9 +76,10 @@ const App = () => {
 
   return (
     <div className="app container is-max-desktop">
-      <h1 className="mb-2 is-size-2 has-text-white has-text-centered">
-        To-do App
-      </h1>
+      <h1 className="is-size-2 has-text-white has-text-centered">To-do App</h1>
+      <p className="mb-4 has-text-white has-text-centered">
+        {remainingTodoItems} / {todoItems.length} tasks remaining
+      </p>
       <DragDropContext onDragEnd={handleDragDrop}>
         <TodoInput createTodoItem={createTodoItem} />
         <Droppable droppableId="ROOT" type="group">
